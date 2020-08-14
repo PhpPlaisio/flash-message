@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+namespace Plaisio\FlashMessage;
+
+/**
+ * Interface for flash messages.
+ */
+interface FlashMessage
+{
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Object constructor.
+   *
+   * @param string $message The payload of the flash message.
+   * @param bool   $isHtml  If set the message is a HTML snippet, otherwise special characters in the inner text will be
+   *                        replaced with HTML entities.
+   */
+  public function __construct(string $message, bool $isHtml = false);
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Adds a class to the list of classes.
+   *
+   * @param string|null $class The class.
+   *
+   * @return $this
+   */
+  public function addClass(?string $class);
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the HTML code of the flash message.
+   *
+   * @return string
+   */
+  public function getHtml(): string;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns true if and only if this flash message must be dismissed automatically.
+   *
+   * @return bool
+   */
+  public function isAutoDismiss(): bool;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns true if and only if the flash message must be shown one and hence removed automatically from the list of
+   * flash messages when shown.
+   *
+   * @return bool
+   */
+  public function isOnce(): bool;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sets a [data](http://www.w3schools.com/tags/att_global_data.asp) attribute.
+   *
+   * @param string      $name  The name of the attribute (without 'data-').
+   * @param string|null $value The attribute value.
+   *
+   * @return $this
+   */
+  public function setAttrData(string $name, ?string $value);
+
+  //--------------------------------------------------------------------------------------------------------------------
+}
+
+//----------------------------------------------------------------------------------------------------------------------

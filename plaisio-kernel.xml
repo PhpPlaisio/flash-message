@@ -1,0 +1,9 @@
+<kernel>
+    <properties>
+        <property>
+            <type>\Plaisio\FlashMessage\FlashMessageManager</type>
+            <name>flashMessage</name>
+            <description>The helper object for flash messages.</description>
+        </property>
+    </properties>
+</kernel>

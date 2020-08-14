@@ -1,0 +1,17 @@
+{
+  "name": "plaisio/flash-message",
+  "description": "PhpPlaisio: Flash Message",
+  "keywords": [
+    "PhpPlaisio",
+    "Flash Message"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Plaisio\\FlashMessage\\": "src/"
+    }
+  }
+}
