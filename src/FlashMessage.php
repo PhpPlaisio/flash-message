@@ -30,11 +30,27 @@ interface FlashMessage
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the HTML code of the flash message.
+   * Returns the HTML code of this flash message.
    *
    * @return string
    */
   public function getHtml(): string;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the first weight for sorting.
+   *
+   * @return int
+   */
+  public function getWeight1(): int;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the second weight for sorting.
+   *
+   * @return int
+   */
+  public function getWeight2(): int;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -46,8 +62,8 @@ interface FlashMessage
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if the flash message must be shown one and hence removed automatically from the list of
-   * flash messages when shown.
+   * Returns true if and only if this flash message must be shown one and hence removed automatically from the
+   * collection of flash messages when shown.
    *
    * @return bool
    */
@@ -63,6 +79,36 @@ interface FlashMessage
    * @return $this
    */
   public function setAttrData(string $name, ?string $value);
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sets the attribute [id](http://www.w3schools.com/tags/att_global_id.asp).
+   *
+   * @param string|null $value The attribute value.
+   *
+   * @return $this
+   */
+  public function setAttrId(?string $value);
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sets the first weight for sorting.
+   *
+   * @param int $weight1 The first weight for sorting.
+   *
+   * @return $this
+   */
+  public function setWeight1(int $weight1);
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Sets the second weight for sorting.
+   *
+   * @param int $weight2 The second weight for sorting.
+   *
+   * @return $this
+   */
+  public function setWeight2(int $weight2);
 
   //--------------------------------------------------------------------------------------------------------------------
 }
