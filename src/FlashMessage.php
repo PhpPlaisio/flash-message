@@ -30,14 +30,6 @@ interface FlashMessage
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the HTML code of this flash message.
-   *
-   * @return string
-   */
-  public function getHtml(): string;
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
    * Returns the first weight for sorting.
    *
    * @return int
@@ -51,6 +43,14 @@ interface FlashMessage
    * @return int
    */
   public function getWeight2(): int;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the HTML code of this flash message.
+   *
+   * @return string
+   */
+  public function htmlFlashMessage(): string;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
