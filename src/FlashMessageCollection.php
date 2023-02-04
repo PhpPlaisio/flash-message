@@ -20,9 +20,9 @@ interface FlashMessageCollection
    *
    * @param FlashMessage $flashMessage rge flash message.
    *
-   * @return $this
+   * @return static
    */
-  public function addFlashMessage(FlashMessage $flashMessage);
+  public function addFlashMessage(FlashMessage $flashMessage): self;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -37,8 +37,7 @@ interface FlashMessageCollection
    *                        </ul>
    *                        Or the name of a class that implements the FlashMessage interface.
    * @param string $message The payload of the flash message.
-   * @param bool   $isHtml  If true the message is a HTML snippet, otherwise special characters in the inner text will
-   *                        be replaced with HTML entities.
+   * @param bool   $isHtml  Whether the message is an HTML snippet or plain text.
    *
    * @return FlashMessage
    */

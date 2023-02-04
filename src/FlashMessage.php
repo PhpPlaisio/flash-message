@@ -13,8 +13,7 @@ interface FlashMessage
    * Object constructor.
    *
    * @param string $message The payload of the flash message.
-   * @param bool   $isHtml  If set the message is a HTML snippet, otherwise special characters in the inner text will be
-   *                        replaced with HTML entities.
+   * @param bool   $isHtml  Whether the message is an HTML snippet or plain text.
    */
   public function __construct(string $message, bool $isHtml = false);
 
@@ -24,9 +23,9 @@ interface FlashMessage
    *
    * @param string|null $class The class.
    *
-   * @return $this
+   * @return static
    */
-  public function addClass(?string $class);
+  public function addClass(?string $class): self;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -76,9 +75,9 @@ interface FlashMessage
    * @param string      $name  The name of the attribute (without 'data-').
    * @param string|null $value The attribute value.
    *
-   * @return $this
+   * @return static
    */
-  public function setAttrData(string $name, ?string $value);
+  public function setAttrData(string $name, ?string $value): self;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -86,9 +85,9 @@ interface FlashMessage
    *
    * @param string|null $value The attribute value.
    *
-   * @return $this
+   * @return static
    */
-  public function setAttrId(?string $value);
+  public function setAttrId(?string $value): self;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -96,9 +95,9 @@ interface FlashMessage
    *
    * @param int $weight1 The first weight for sorting.
    *
-   * @return $this
+   * @return static
    */
-  public function setWeight1(int $weight1);
+  public function setWeight1(int $weight1): self;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -106,9 +105,9 @@ interface FlashMessage
    *
    * @param int $weight2 The second weight for sorting.
    *
-   * @return $this
+   * @return static
    */
-  public function setWeight2(int $weight2);
+  public function setWeight2(int $weight2): self;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
